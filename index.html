@@ -1,50 +1,525 @@
-﻿<!doctype html>
-<html ng-app="store">
-  <head>
-    <title>Self Checkout</title>
-    <meta name="description" content="Self Checkout">
-    <meta name="keywords" content="Self Checkout">
-    <meta name="author" content="Gourav Vaidya"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <!-- jQuery, Angular -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <!--Working QR  -->
-    <script src="vendor/jquery-1.9.0.min.js" type="text/javascript"></script>
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Gourav Vaidya Mobile Apps Architect</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
 
-    <script src="https://code.jquery.com/jquery-1.9.0.min.map" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
-    <script src="//cdn.jsdelivr.net/angular.initial-value/latest/angular-initial-value.min.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'/>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,600,300' rel='stylesheet' type='text/css'>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
 
-    <!-- Store Code -->
-    <script src="js/list/modernizr.custom.js" type="text/javascript"></script>
-    <script src="js/app.js" type="text/javascript"></script>
-    <script src="js/store.js" type="text/javascript"></script>
-    <script src="js/cart.js" type="text/javascript"></script>
-    <script src="js/controller.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
 
-    <link href="css/simple-line-icons-master/css/simple-line-icons.css" rel="stylesheet" type="text/css" />
-    <link href="css/component_black.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/style_black.css"/>
-  </head>
-  <body>
-              <div class="container">
-              <div class="container-shadow">
-                    <a class="logo" href="index.html">
-                      </a>
-                    <h1 class="well">
-                        Self Checkout
-                    </h1>
-                    <div ng-view ></div>
-               </div>
-            </div>
-  </body>
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	<div id="colorlib-page">
+		<div class="container-wrap">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+			<div class="text-center">
+				<div class="author-img" style="background-image: url(images/about.jpg);"></div>
+				<h1 id="colorlib-logo"><a href="index.html">Gourav Vaidya</a></h1>
+				<span class="position"><a href="#">Mobile Apps/IoT Architect</a></span>
+			</div>
+			<nav id="colorlib-main-menu" role="navigation" class="navbar">
+				<div id="navbar" class="collapse">
+					<ul>
+						<li><a href="#" data-nav-section="about">Summary</a></li>
+						<li><a href="#" data-nav-section="skills">Skills</a></li>
+						<li><a href="#" data-nav-section="experience">Experience</a></li>
+						<li><a href="#" data-nav-section="work">Work</a></li>
+						<li><a href="#" data-nav-section="contact">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="colorlib-footer">
+				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> </small></p>
+				<ul>
+					<li><a href="https://twitter.com/gouravvaidya"><i class="icon-twitter2"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/gouravvaidya/"><i class="icon-linkedin2"></i></a></li>
+				</ul>
+			</div>
+
+		</aside>
+
+		<div id="colorlib-main">
+			<!-- 
+<section id="colorlib-hero" class="js-fullheight" data-section="home">
+				<div class="flexslider js-fullheight">
+					<ul class="slides">
+				   	<li style="background-image: url(images/img_bg_1.jpg);">
+				   		<div class="overlay"></div>
+				   		<div class="container-fluid">
+				   			<div class="row">
+					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+					   				<div class="slider-text-inner js-fullheight">
+					   					<div class="desc">
+						   					<h1>Hi! <br>I'm Jackson</h1>
+						   					<h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>
+												<p><a class="btn btn-primary btn-learn">Download CV <i class="icon-download4"></i></a></p>
+											</div>
+					   				</div>
+					   			</div>
+					   		</div>
+				   		</div>
+				   	</li>
+				   	<li style="background-image: url(images/img_bg_2.jpg);">
+				   		<div class="overlay"></div>
+				   		<div class="container-fluid">
+				   			<div class="row">
+					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+					   				<div class="slider-text-inner">
+					   					<div class="desc">
+						   					<h1>I am <br>a Designer</h1>
+												<h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>
+												<p><a class="btn btn-primary btn-learn">View Portfolio <i class="icon-briefcase3"></i></a></p>
+											</div>
+					   				</div>
+					   			</div>
+					   		</div>
+				   		</div>
+				   	</li>
+				  	</ul>
+			  	</div>
+			</section>
+ -->
+
+			<section class="colorlib-about" data-section="about">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="col-md-12">
+									<div class="about-desc">
+										<span class="heading-meta">Summary</span>
+										<h2 class="colorlib-heading">Who Am I?</h2>
+										<p><strong>Hi I'm Gourav Vaidya</strong>I developed everything for Mobile Tech. Technology leader with experience in building consumer mobile tech and IoT apps at massive scale.</p>
+										<p> Strong eye for detail and tenacity to never quit on something until it is perfect. Capable of working with minimal supervision and committed to providing high-quality code on every project. motivated individual with strong programming skills who consistently performs well in a challenging environment.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
+									<div class="services color-1">
+										<span class="icon2"><i class="icon-phone3"></i></span>
+										<h3>Mobile</h3>
+									</div>
+								</div>
+								
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
+									<div class="services color-3">
+										<span class="icon2"><i class="icon-data"></i></span>
+										<h3>Web Apps</h3>
+									</div>
+								</div>
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
+									<div class="services color-4">
+										<span class="icon2"><i class="icon-phone3"></i></span>
+										<h3>IoT</h3>
+									</div>
+								</div>
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
+									<div class="services color-4">
+										<span class="icon2"><i class="icon-data"></i></span>
+										<h3>UI/UX</h3>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+									<div class="hire">
+										<h2>I am happy to know you <br>that 35+ projects done sucessfully!</h2>
+										<a href="#" class="btn-hire">Hire me</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+
+			
+
+			<section class="colorlib-skills" data-section="skills">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">My Specialty</span>
+							<h2 class="colorlib-heading animate-box">My Skills</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+							<p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="progress-wrap">
+								<h3>iOS</h3>
+								<div class="progress">
+								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
+								    <span>90%</span>
+								  	</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="progress-wrap">
+								<h3>Android</h3>
+								<div class="progress">
+								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="80"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
+								    <span>80%</span>
+								  	</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="progress-wrap">
+								<h3>Xamarin</h3>
+								<div class="progress">
+								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="70"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
+								    <span>70%</span>
+								  	</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="progress-wrap">
+								<h3>React Native</h3>
+								<div class="progress">
+								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="70"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
+								    <span>70%</span>
+								  	</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="progress-wrap">
+								<h3>PHP</h3>
+								<div class="progress">
+								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
+								    <span>70%</span>
+								  	</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="progress-wrap">
+								<h3>UI/UX</h3>
+								<div class="progress">
+								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
+								    <span>70%</span>
+								  	</div>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</section>
+
+
+
+			<section class="colorlib-experience" data-section="experience">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Experience</span>
+							<h2 class="colorlib-heading animate-box">Work Experience</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+				         <div class="timeline-centered">
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+					            <div class="timeline-entry-inner">
+
+					               <div class="timeline-icon color-1">
+					                  <i class="icon-pen2"></i>
+					               </div>
+
+					               <div class="timeline-label">
+					                  <h2><a href="#">Founding Member and Mobility Lead/Technical Lead @ KWIK24(BBInstant)</a> <span></span></h2>
+					                  <p>Implemented  the IOT software and hardware for the vending machine ,consumer related mobile apps and also PWA app of KWIK24</p>
+					               </div>
+					            </div>
+					         </article>
+
+
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-2">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">Founding Member and Mobile Lead/Chief Software Architect @ Entappia</a> <span></span></h2>
+					                  <p>Leading the team India for the development of Apps and backend.We worked for the client called MIST(Accuired by Juniper Networks) and developed  the Mobile apps and there framework</p>
+					               </div>
+					            </div>
+					         </article>
+
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-3">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">Senior Software Engineer @ RareMile Technologies</a> <span></span></h2>
+					                  <p>Accomplishes engineering and organization mission by completing related results as needed.Supports and develops software engineers by providing advice, coaching and educational opportunities.</p>
+					               </div>
+					            </div>
+					         </article>
+
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-4">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">Software Engineer @ Saggezza</a> <span></span></h2>
+					                  <p>Started working as a android developer and developed couple of android app and iOS for a company called ChorePay. Also worked for company called Unisys as a client side and developed iOS app for there enterprise appstore. </p>
+					               </div>
+					            </div>
+					         </article>
+
+					         
+
+					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-none">
+					               </div>
+					            </div>
+					         </article>
+					      </div>
+					   </div>
+				   </div>
+				</div>
+			</section>
+
+			<section class="colorlib-work" data-section="work">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">My Work</span>
+							<h2 class="colorlib-heading animate-box">Recent Work</h2>
+						</div>
+					</div>
+					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+						<!-- 
+<div class="col-md-12">
+							<p class="work-menu"><span><a href="#" class="active">Graphic Design</a></span> <span><a href="#">Web Design</a></span> <span><a href="#">Software</a></span> <span><a href="#">Apps</a></span></p>
+						</div>
+ -->
+					</div>
+					<div class="row">
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="project" style="background-image: url(images/img-1.jpg);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="">DigiTruck</a></h3>
+										<span>Mobile App</span>
+<!-- 
+										<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+ -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="project" style="background-image: url(images/img-2.jpg);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="">BBInstant</a></h3>
+										<span>Mobile App</span>
+										<!-- 
+<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+ -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
+							<div class="project" style="background-image: url(images/img-3.jpg);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="">UCLA Health</a></h3>
+										<span>Mobile Apps</span>
+										<!-- 
+<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+ -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
+							<div class="project" style="background-image: url(images/img-4.jpg);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="">Intelligent Trade Labs</a></h3>
+										<span>Mobile Apps</span>
+										<!-- 
+<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+ -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="project" style="background-image: url(images/img-5.jpg);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="">Park Your Boat</a></h3>
+										<span>Graphic, Logo</span>
+										<!-- 
+<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+ -->
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+
+
+
+			<section class="colorlib-contact" data-section="contact">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Get in Touch</span>
+							<h2 class="colorlib-heading">Contact</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="colorlib-icon">
+									<i class="icon-globe-outline"></i>
+								</div>
+								<div class="colorlib-text">
+									<p><a href="#">gouravvaidya108@gmail.com</a></p>
+								</div>
+							</div>
+
+							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="colorlib-icon">
+									<i class="icon-map"></i>
+								</div>
+								<div class="colorlib-text">
+									<p>Bangalore</p>
+								</div>
+							</div>
+
+							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="colorlib-icon">
+									<i class="icon-phone"></i>
+								</div>
+								<div class="colorlib-text">
+									<p><a href="tel://">+91-9035025000</a></p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+		</div><!-- end:colorlib-main -->
+	</div><!-- end:container-wrap -->
+	</div><!-- end:colorlib-page -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Owl carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Counters -->
+	<script src="js/jquery.countTo.js"></script>
+	
+	
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+
+	</body>
 </html>
+
